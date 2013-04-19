@@ -35,8 +35,9 @@ class FeedBlock_Manager extends GridField
 	 */
 	public function FieldHolder($properties = array()) {
 		Requirements::javascript(THIRDPARTY_DIR . '/jquery-livequery/jquery.livequery.min.js');
-		$modulePath = realpath(__DIR__.'/../');
+		$modulePath = dirname(dirname(__FILE__));
 		$modulePath = str_replace(BASE_PATH, '', $modulePath);
+		$modulePath = substr($modulePath, 1);
 		Requirements::javascript($modulePath . '/js/feedblock_manager.js');
 		Requirements::css($modulePath . '/css/GridFieldRefreshButton.css');
 		return parent::FieldHolder($properties);

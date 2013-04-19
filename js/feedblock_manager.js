@@ -2,32 +2,35 @@
 
 	$(document).ready(function() {
 		setTimeout(function(){
-			$('a.feedblock-refresh-link').click(function(e){
-				e.preventDefault();
-				e.stopPropagation();
-				var obj = $(this);
-				var url = obj.attr("href");
-				feedblock_seticon(obj, 'loading.gif');
-				$.ajax({
-					url: url,
-					success: function(data) {
-						var iconobj = $(obj);
-						if(data+'' == '1') {
-							feedblock_seticon(iconobj, 'check.png');
-						}
-						else {
+			$('a.feedblock-refresh-link').each(function(){
+
+				$(this).click(function(e){
+					e.preventDefault();
+					e.stopPropagation();
+					var obj = $(this);
+					var url = obj.attr("href");
+					feedblock_seticon(obj, 'loading.gif');
+					$.ajax({
+						url: url,
+						success: function(data) {
+							var iconobj = $(obj);
+							if(data+'' == '1') {
+								feedblock_seticon(iconobj, 'check.png');
+							}
+							else {
+								feedblock_seticon(iconobj, 'error.png');
+								alert("Could not refresh cache - please try again.");
+							}
+						},
+						error: function(data) {
+							var iconobj = $(obj);
 							feedblock_seticon(iconobj, 'error.png');
 							alert("Could not refresh cache - please try again.");
 						}
-					},
-					error: function(data) {
-						var iconobj = $(obj);
-						feedblock_seticon(iconobj, 'error.png');
-						alert("Could not refresh cache - please try again.");
-					}
+					});
+					return false;
 				});
-
-				return false;
+				$(this).css('visibility','visible');
 			});
 		},1000);
 	});

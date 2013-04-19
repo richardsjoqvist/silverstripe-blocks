@@ -1,1 +1,1 @@
-.cms table.ss-gridfield-table tbody td a.refresh-link { background: url(../i/refresh.png) no-repeat 0px 0px; display:inline-block; width:16px; height:16px; margin-right: 3px; position:relative; top:3px; }
+.cms table.ss-gridfield-table tbody td a.refresh-link { background: url(../i/refresh.png) no-repeat 0px 0px; display:inline-block; width:16px; height:16px; margin-right: 3px; position:relative; top:3px; visibility: hidden; z-index: 99999; }
