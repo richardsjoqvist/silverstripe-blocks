@@ -140,10 +140,16 @@ class FeedBlock extends Block
 			return false;
 		}
 
-		$xml_source = file_get_contents($this->getCachePath());
-		$xml = simplexml_load_string($xml_source);
+		try {
+			$xml_source = file_get_contents($this->getCachePath());
+			$xml = @simplexml_load_string($xml_source);
+		}
+		catch(Exception $e) {
+			// Failed to load/parse xml
+			return false;
+		}
 
-		if(!count($xml)) {
+		if(!count($xml) || !isset($xml->channel)) {
 			return false;
 		}
 
