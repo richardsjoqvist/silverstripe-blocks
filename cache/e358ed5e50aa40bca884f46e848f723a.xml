@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Sara Bakar</title>
+	<atom:link href="http://sarabakar.se/feed/" rel="self" type="application/rss+xml" />
+	<link>http://sarabakar.se</link>
+	<description>En stenugn, några surdegar och annat gott i ett gammalt hus i Slöinge</description>
+	<lastBuildDate>Thu, 18 Apr 2013 17:34:41 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>http://wordpress.org/?v=3.5.1</generator>
+		<item>
+		<title>Lantliv med nöt &amp; frö</title>
+		<link>http://sarabakar.se/blog/2013/04/18/lantliv-med-not-fro/</link>
+		<comments>http://sarabakar.se/blog/2013/04/18/lantliv-med-not-fro/#comments</comments>
+		<pubDate>Thu, 18 Apr 2013 17:29:51 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sura bröd]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6412</guid>
+		<description><![CDATA[Idag var jag iväg och köpte nya Lantliv Mat &#038; Vin, med jättefint reportage om Solhaga. Bilderna togs förra sommaren, av jätteduktiga Cecilia Möller. Receptet på Solhagas focaccia är med i tidningen, men jag tog faktiskt fram ytterligare ett recept som inte fick plats. Här har ni det.]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/04/18/lantliv-med-not-fro/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/04/notofro_7419-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Pumparostbröd</title>
+		<link>http://sarabakar.se/blog/2013/04/13/pumparostbrod/</link>
+		<comments>http://sarabakar.se/blog/2013/04/13/pumparostbrod/#comments</comments>
+		<pubDate>Sat, 13 Apr 2013 09:46:25 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sura bröd]]></category>
+		<category><![CDATA[recept]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6449</guid>
+		<description><![CDATA[Här har vi ett ljust och gott bröd, med malda pumpakärnor som ger en lite grönaktig ton åt innehållet. Kanske kan passa nu när våren troligtvis är på väg. ]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/04/13/pumparostbrod/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/03/pumparostbrod-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Fem år med Solhaga, del 3</title>
+		<link>http://sarabakar.se/blog/2013/04/05/fem-ar-med-solhaga-del-3/</link>
+		<comments>http://sarabakar.se/blog/2013/04/05/fem-ar-med-solhaga-del-3/#comments</comments>
+		<pubDate>Fri, 05 Apr 2013 21:26:26 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Vårt hus Solhaga]]></category>
+		<category><![CDATA[renovering]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6524</guid>
+		<description><![CDATA[Dags för tredje och sista delen i berättelsen om våra fem år med Solhaga. Nu tänkte jag ta er med upp på den övre våningen – även kallad vinden. Världens bästa snickare Peter och JB satte igång, och projektet växte. Taket var dåligt och måste rivas. Vi fick i princip bygga en helt ny övervåning, och det hela blev en kamp mot klockan. Vi hade inte tak över huvudet och höststormarna närmade sig.]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/04/05/fem-ar-med-solhaga-del-3/feed/</wfw:commentRss>
+		<slash:comments>5</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/04/vindsbygge_4290-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Fem år med Solhaga, del 2</title>
+		<link>http://sarabakar.se/blog/2013/04/04/fem-ar-med-solhaga-del-2/</link>
+		<comments>http://sarabakar.se/blog/2013/04/04/fem-ar-med-solhaga-del-2/#comments</comments>
+		<pubDate>Thu, 04 Apr 2013 13:28:38 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Vårt hus Solhaga]]></category>
+		<category><![CDATA[renovering]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6496</guid>
+		<description><![CDATA[Dags att kliva innanför dörren på Solhaga, för idag ska ni få följa med och se vad som har hänt på nedre våningen under de här fem åren. Redan här vill jag säga till alla tidigare Solhaga-bor att det här inlägget inte på något sätt vill racka ner på hur det var innan. Allt har ju sin tid. Se det istället som en kärleksförklaring till ett hus som vi har försökt förbättra med den största ödmjukhet och respekt för historia och hantverkstraditioner.]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/04/04/fem-ar-med-solhaga-del-2/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/04/vardagsrum_efter_0388-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Påskbrödet 2013</title>
+		<link>http://sarabakar.se/blog/2013/03/29/paskbrodet-2013/</link>
+		<comments>http://sarabakar.se/blog/2013/03/29/paskbrodet-2013/#comments</comments>
+		<pubDate>Fri, 29 Mar 2013 15:31:39 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sura bröd]]></category>
+		<category><![CDATA[påsk]]></category>
+		<category><![CDATA[recept]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6460</guid>
+		<description><![CDATA[Tanken med årets påskbröd på Solhaga är att det ska påminna om kavring, men inte lika sött och kompakt. Gott kryddat är det, med de klassiska brödkryddorna anis, fänkål och kummin. Glad påsk på er alla!]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/29/paskbrodet-2013/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/03/paskbrod-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Fem år med Solhaga, del 1</title>
+		<link>http://sarabakar.se/blog/2013/03/28/fem-ar-med-solhaga-del-1/</link>
+		<comments>http://sarabakar.se/blog/2013/03/28/fem-ar-med-solhaga-del-1/#comments</comments>
+		<pubDate>Thu, 28 Mar 2013 11:29:47 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Vårt hus Solhaga]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=5764</guid>
+		<description><![CDATA[Vi firar ett jubileum idag. Det är exakt fem år sedan Ante och jag lämnade bort barnen, hyrde golvslip och åkte till Svensk Fastighetsförmedling i Falkenberg för att skriva på några papper som gjorde oss till ägare av det finaste lilla hus man kan önska sig. Det behövde ju bara målas lite här och där, som jag skrev på facebook. Sedan började arbetet. ]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/28/fem-ar-med-solhaga-del-1/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/03/sara_ante_malar_4071-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Levainbaguette med prästost</title>
+		<link>http://sarabakar.se/blog/2013/03/27/levainbaguette-med-prastost/</link>
+		<comments>http://sarabakar.se/blog/2013/03/27/levainbaguette-med-prastost/#comments</comments>
+		<pubDate>Wed, 27 Mar 2013 16:53:32 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sura bröd]]></category>
+		<category><![CDATA[levain]]></category>
+		<category><![CDATA[påsk]]></category>
+		<category><![CDATA[recept]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6463</guid>
+		<description><![CDATA[Idag började påsken på Solhaga Det har blivit tradition här att baka ett gott ljust bröd med ost till våra stora högtider. När jag körde leveransen till di Mare i Halmstad förra veckan frågade jag Stefan, som driver denna fina lilla butik, om han hade någon intressant ost på lager. Det hade han. Jag fick med mig en jättestor rund prästost på 13,6 kilo hem i bilen. ]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/27/levainbaguette-med-prastost/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/03/levainprastost_0513-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Medelhavsbröd med soltorkad tomat och timjan</title>
+		<link>http://sarabakar.se/blog/2013/03/25/medelhavsbrod-med-soltorkad-tomat-och-timjan/</link>
+		<comments>http://sarabakar.se/blog/2013/03/25/medelhavsbrod-med-soltorkad-tomat-och-timjan/#comments</comments>
+		<pubDate>Mon, 25 Mar 2013 21:58:49 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sura bröd]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6443</guid>
+		<description><![CDATA[Det närmar sig påsk och här på Solhaga pågår förberedelserna för fullt. Jag ska strax ner i källaren och leta efter halmtuppen och sedan upp på vinden och se om de handmålade påskäggen har överlevt turerna fram och tillbaka i flyttlådor. Men först kommer här receptet på ett bröd som vår praktikant Linnea hittade på som helgbröd för ett par veckor sedan. Det kan bli väldigt gott till all den goda påskmaten.]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/25/medelhavsbrod-med-soltorkad-tomat-och-timjan/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/03/medelhavsbrod-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Viennoiserie del 1 – Wienerbröd</title>
+		<link>http://sarabakar.se/blog/2013/03/19/viennoiserie-del-1-wienerbrod/</link>
+		<comments>http://sarabakar.se/blog/2013/03/19/viennoiserie-del-1-wienerbrod/#comments</comments>
+		<pubDate>Tue, 19 Mar 2013 16:54:38 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sötebröd]]></category>
+		<category><![CDATA[recept]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6258</guid>
+		<description><![CDATA[Vilken helg det har varit, och vad mätt jag är på smör! Gustav är äntligen tillbaka på Solhaga efter utbildning på Bellouet Conseil i Paris och jobb på Brödkultur i Helsingborg. Han började återkomsten med att hålla en helt fantastisk kurs i viennoiserie. Gemensamt för bakverken är att de innehåller mycket smör, socker och ägg. En del av dem är laminerade (kavlade), men inte alla. Croissanter, pain au chocolat, brioche, wienerbröd och frukostbröd.]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/19/viennoiserie-del-1-wienerbrod/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/02/wienerbröd_2-140x140.jpg" type="image/jpg" />
+	</item>
+		<item>
+		<title>Allianskringlor</title>
+		<link>http://sarabakar.se/blog/2013/03/13/allianskringlor/</link>
+		<comments>http://sarabakar.se/blog/2013/03/13/allianskringlor/#comments</comments>
+		<pubDate>Wed, 13 Mar 2013 15:37:51 +0000</pubDate>
+		<dc:creator>Sara Wennerström</dc:creator>
+				<category><![CDATA[Recept: sötebröd]]></category>
+
+		<guid isPermaLink="false">http://sarabakar.se/?p=6363</guid>
+		<description><![CDATA[Veckans kondis på Solhaga är en riktig klassiker. Allianskringlan, med mördeg, smördeg och kanelsocker i ljuv förening. Lite krångliga att göra, men så goda att man smäller av. Dessutom kan du frysa in dem obakta, sedan är det bara att ta fram, tina upp och baka av. ]]></description>
+		<wfw:commentRss>http://sarabakar.se/blog/2013/03/13/allianskringlor/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		<enclosure url="http://static.sarabakar.se/wp-content/uploads/2013/02/allianskringlor-140x140.jpg" type="image/jpg" />
+	</item>
+	</channel>
+</rss>
+
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Minified using disk
+Page Caching using disk (enhanced)
+Content Delivery Network via static.sarabakar.se
+
+Served from: sarabakar.se @ 2013-04-19 21:39:16 -->
