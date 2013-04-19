@@ -39,7 +39,10 @@ class Block extends DataObject {
 	 * @var array
 	 */
 	public static $summary_fields = array(
-		'CompiledContent'	=> 'Block',
+		'Thumbnail'			=> 'Image',
+		'Title'				=> 'Title',
+		'LeadInText'		=> 'Lead in',
+		'ContentText'		=> 'Content',
  	);
 
 	/**
@@ -113,27 +116,39 @@ class Block extends DataObject {
 		
 		return $fields;
 	}
-	
+
 	/**
-	 * Compile content for presentation in list in admin
+	 * Text-only Lead In
 	 *
 	 * @return string
 	 */
-	public function CompiledContent() {
-		$content = '';
-		if(!empty($this->Title)) {
-			$content .= $this->Title;
+	public function LeadInText() {
+		if(!$this->LeadIn) {
+			return '';
 		}
-		if(!empty($this->LeadIn)) {
-			$content .= (!empty($content)?"\n":'') . $this->LeadIn;
-		}
-		if(!empty($this->Content)) {
-			$content .= (!empty($content)?"\n":'') . $this->Content;
-		}
-		$content = preg_replace("/<(.*)>/isU",'',$content);
-		return $content;
+		$str = $this->LeadIn;
+		$str = html_entity_decode($str);
+		$str = strip_tags($str);
+		$str = trim($str);
+		return $str;
 	}
-	
+
+	/**
+	 * Text-only Content
+	 *
+	 * @return string
+	 */
+	public function ContentText() {
+		if(!$this->Content) {
+			return '';
+		}
+		$str = $this->Content;
+		$str = html_entity_decode($str);
+		$str = strip_tags($str);
+		$str = trim($str);
+		return $str;
+	}
+
 	/**
 	 * Get thumbnail for list in admin
 	 *
