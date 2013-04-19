@@ -125,31 +125,7 @@ class FeedBlock extends Block
 			return false;
 		}
 
-		$refresh = true;
-		if(is_file($this->getCachePath())) {
-			$refresh = false;
-			$expires = !$refresh && $this->CacheTime > 0 ? time()-($this->CacheTime * 60) : 0;
-			if($expires > filemtime($this->getCachePath())) {
-				$refresh = true;
-			}
-		}
-		if($refresh) {
-			$this->refresh();
-		}
-		if(!is_file($this->getCachePath())) {
-			return false;
-		}
-
-		try {
-			$xml_source = file_get_contents($this->getCachePath());
-			$xml = @simplexml_load_string($xml_source);
-		}
-		catch(Exception $e) {
-			// Failed to load/parse xml
-			return false;
-		}
-
-		if(!count($xml) || !isset($xml->channel)) {
+		if(!$xml = $this->loadXml()) {
 			return false;
 		}
 
@@ -236,49 +212,49 @@ class FeedBlock extends Block
 	}
 
 	/**
-	 * Get path to cache folder
-	 *
-	 * @return string
+	 * Load RSS Feed
 	 */
-	function getCachePath() {
-		if(empty($this->cachePath)) {
-			$cacheFolderPath = dirname(dirname(__FILE__)).'/cache';
-			if(!file_exists($cacheFolderPath)) {
-				Filesystem::makeFolder($cacheFolderPath);
-			}
-			if(!is_file($cacheFolderPath.'/.htaccess')) {
-				file_put_contents($cacheFolderPath.'/.htaccess', "order deny, allow\ndeny from all", LOCK_EX);
-			}
-			$this->cachePath = $cacheFolderPath.'/'.md5($this->FeedURL).'.xml';
+	private function loadXml($refresh=false) {
+		if(empty($this->FeedURL)) {
+			return false;
 		}
-		return $this->cachePath;
+		$cacheKey = md5($this->FeedURL);
+		$xml = null;
+		// Get the Zend Cache to load/store cache into
+		$cache = SS_Cache::factory('FeedBlock_xml_', 'Output', array(
+			'automatic_serialization' => false,
+			'lifetime' => null
+		));
+		// Unless force refreshing, try loading from cache
+		if (!$refresh) {
+			// The PHP config sources are always needed
+			if($xml = $cache->load($cacheKey)) {
+				return simplexml_load_string($xml);
+			}
+		}
+		// Load feed and cache it
+		$xml = file_get_contents($this->FeedURL);
+		if(!empty($xml)) {
+			try {
+				$xmlObj = @simplexml_load_string($xml);
+			}
+			catch(Exception $e) {
+				return false;
+			}
+			if(isset($xmlObj->channel)) {
+				$cache->save($xml, $cacheKey);
+				return $xmlObj;
+			}
+		}
+		return false;
 	}
 
 	/**
 	 * Refresh feed
 	 */
 	function refresh() {
-		$xml = file_get_contents($this->FeedURL);
-		if(empty($xml) || $xml === false) {
-			// Try again with some context
-			$opts = array(
-				'http'=>array(
-					'protocol_version'=>'1.1',
-					'method'=>'GET',
-					'header'=>array(
-						'Connection: close'
-					),
-					'user_agent'=>$_SERVER['HTTP_USER_AGENT']
-				)
-			);
-			$context  = stream_context_create($opts);
-			$xml = file_get_contents($this->FeedURL, false, $context);
-		}
-		if(empty($xml) || $xml === false) {
-			return false;
-		}
-		if($this->getCachePath()) {
-			return (bool) file_put_contents($this->getCachePath(), $xml, LOCK_EX);
+		if($xml = $this->loadXml(true)) {
+			return get_class($xml) === 'SimpleXMLElement';
 		}
 		return false;
 	}
