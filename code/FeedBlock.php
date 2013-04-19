@@ -242,7 +242,7 @@ class FeedBlock extends Block
 	 */
 	function getCachePath() {
 		if(empty($this->cachePath)) {
-			$cacheFolderPath = realpath(__DIR__.'/..').'/cache';
+			$cacheFolderPath = dirname(dirname(__FILE__)).'/cache';
 			if(!file_exists($cacheFolderPath)) {
 				Filesystem::makeFolder($cacheFolderPath);
 			}
@@ -277,7 +277,10 @@ class FeedBlock extends Block
 		if(empty($xml) || $xml === false) {
 			return false;
 		}
-		return (bool) file_put_contents($this->getCachePath(), $xml, LOCK_EX);
+		if($this->getCachePath()) {
+			return (bool) file_put_contents($this->getCachePath(), $xml, LOCK_EX);
+		}
+		return false;
 	}
 
 }
