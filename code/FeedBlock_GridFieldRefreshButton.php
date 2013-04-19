@@ -17,7 +17,7 @@ class FeedBlock_GridFieldRefreshButton extends GridFieldEditButton {
 		$data = new ArrayData(array(
 			'Link' => Controller::join_links($gridField->Link('item'), $record->ID, 'refresh')
 		));
-		$templatePath = realpath(__DIR__.'/../templates/GridFieldRefreshButton.ss');
+		$templatePath = dirname(dirname(__FILE__)).'/templates/GridFieldRefreshButton.ss';
 		$templatePath = str_replace(BASE_PATH, '', $templatePath);
 		return $data->renderWith('../'.$templatePath);
 	}
