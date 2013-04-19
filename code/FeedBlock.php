@@ -20,11 +20,12 @@ class FeedBlock extends Block
 	 * @var array
 	 */
 	protected $_datafields = array(
-		'FeedURL'		=> 'TextField',
-		'Results'		=> 'NumericField',
-		'CacheTime'		=> 'NumericField',
-		'Striptags'		=> 'CheckboxField',
-		'Modifier'		=> 'DropdownField',
+		'FeedURL'			=> 'TextField',
+		'Results'			=> 'NumericField',
+		'SummaryMaxLength'	=> 'NumericField',
+		'CacheTime'			=> 'NumericField',
+		'Striptags'			=> 'CheckboxField',
+		'Modifier'			=> 'DropdownField',
 	);
 
 	/**
@@ -155,32 +156,42 @@ class FeedBlock extends Block
 
 		foreach($xml->channel->item as $item)
 		{
+			// Date
 			$date = new SS_Datetime('Date');
 			$date->setValue((string) $item->pubDate);
+			// Title
+			$itemTitle = (string) $item->title;
+			$itemTitle = html_entity_decode($itemTitle);
 			$title = new Text('Title');
-			$title->setValue((string) $item->title);
-			$desc = new Text('Description');
-			$description = (string) $item->description;
+			$title->setValue($itemTitle);
+			// Description
+			$itemDescription = (string) $item->description;
+			$itemDescription = html_entity_decode($itemDescription);
+			$description = new Text('Description');
 			if($this->Striptags) {
-				$description = strip_tags($description);
+				$itemDescription = strip_tags($itemDescription);
 			}
-			$desc->setValue($description);
+			$description->setValue($itemDescription);
+			// Link
 			$link = (string) $item->link;
-			// Create summary
-			$summary = $description;
+			// Summary
+			$summary = $itemDescription;
 			$summary = strip_tags($summary);
 			$summary = trim($summary);
-			// Truncate summary line to 100 characters
-			$max_len = 100;
-			if(strlen($summary) > $max_len) {
-				$summary = substr($summary, 0, $max_len) . '...';
+			// Get first paragraph
+			$summary = explode("\n",$summary);
+			$summary = array_shift($summary);
+			// Truncate summary if necessary
+			$maxLength = (int) $this->SummaryMaxLength;
+			if($maxLength && strlen($summary) > $maxLength) {
+				$summary = substr($summary, 0, $maxLength) . '...';
 			}
 			// Add to result list
 			$result->push(new ArrayData(array(
 				'Title'			=> $title,
 				'Date'			=> $date,
 				'Link'			=> $link,
-				'Description'	=> $desc,
+				'Description'	=> $description,
 				'Summary'		=> $summary,
 			)));
 			if($counter) {

@@ -27,6 +27,7 @@ sv:
     RESULTS: 'Antal resultat att visa'
     CACHETIME: 'Tid (i minuter) att spara resultaten i cache (noll för att inaktivera)'
     STRIPTAGS: 'Avlägsna HTML-taggar från resultaten'
+    SUMMARYMAXLENGTH: 'Maximalt antal tecken i summeringstext'
     MODIFIER: 'Funktion för att modifiera inlägg innan de visas'
     LINKEXTERNAL: 'Länka block till extern URL (prioriteras före intern block-länk)'
     LINKINTERNAL: 'Länka block till intern sida'

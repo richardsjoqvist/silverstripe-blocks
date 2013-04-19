@@ -27,6 +27,7 @@ en:
     RESULTS: 'Number of results to display'
     CACHETIME: 'Time (in minutes) to cache results (zero to disable)'
     STRIPTAGS: 'Remove HTML tags from results'
+    SUMMARYMAXLENGTH: 'Max number of characters in summary'
     MODIFIER: 'Function for modifying entries before displaying'
     LINKEXTERNAL: 'Link block to external URL (overrides internal block link)'
     LINKINTERNAL: 'Link block to internal page'
