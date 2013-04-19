@@ -212,14 +212,16 @@ class FeedBlock extends Block
 	}
 
 	/**
-	 * Load RSS Feed
+	 * Load RSS Feed XML
+	 *
+	 * @param bool $refresh
+	 * @return bool|SimpleXMLElement
 	 */
 	private function loadXml($refresh=false) {
 		if(empty($this->FeedURL)) {
 			return false;
 		}
 		$cacheKey = md5($this->FeedURL);
-		$xml = null;
 		// Get the Zend Cache to load/store cache into
 		$cache = SS_Cache::factory('FeedBlock_xml_', 'Output', array(
 			'automatic_serialization' => false,
@@ -227,7 +229,6 @@ class FeedBlock extends Block
 		));
 		// Unless force refreshing, try loading from cache
 		if (!$refresh) {
-			// The PHP config sources are always needed
 			if($xml = $cache->load($cacheKey)) {
 				return simplexml_load_string($xml);
 			}
