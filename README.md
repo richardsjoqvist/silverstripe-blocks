@@ -7,10 +7,13 @@ Compatible with SilverStripe 3 (tested with 3.0.5)
 
 Drop the module into your SilverStripe project and run /dev/build
 
-## Dependencies
+## Optional dependencies
 
 Blocks uses the [OptionalTreeDropdownField](https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield)
 plugin if it's installed in your project.
+
+Blocks also uses the [SortableGridField](https://github.com/UndefinedOffset/SortableGridField) plugin if it's installed
+in your project.
 
 ## Usage
 

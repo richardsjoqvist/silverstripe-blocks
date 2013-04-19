@@ -23,6 +23,9 @@ class FeedBlock_Manager extends GridField
 				new GridFieldDeleteAction(),
 				new FeedBlock_GridFieldDetailForm()
 			);
+			if(count($dataList) > 1 && class_exists('GridFieldSortableRows')) {
+				$config->addComponent(new GridFieldSortableRows('SortOrder'));
+			}
 		}
 		parent::__construct($name, $title, $dataList, $config);
 	}
