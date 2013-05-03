@@ -1,7 +1,10 @@
 ## Blocks SilverStripe module
 
 Blocks is a generic class which can be used to build small content blocks which can be associated globally or with a specific page.
-Compatible with SilverStripe 3 (tested with 3.0.5)
+
+## Requirements
+
+* SilverStripe 3.0
 
 ## Installation
 
@@ -9,11 +12,10 @@ Drop the module into your SilverStripe project and run /dev/build
 
 ## Optional dependencies
 
-Blocks uses the [OptionalTreeDropdownField](https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield)
-plugin if it's installed in your project.
+The following plugins are used in they are available in your project:
 
-Blocks also uses the [SortableGridField](https://github.com/UndefinedOffset/SortableGridField) plugin if it's installed
-in your project.
+* [optionaltreedropdownfield](https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield)
+* [SortableGridField](https://github.com/UndefinedOffset/SortableGridField)
 
 ## Usage
 
