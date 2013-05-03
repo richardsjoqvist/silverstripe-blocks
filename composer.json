@@ -1,0 +1,18 @@
+{
+	"name": "richardsjoqvist/silverstripe-blocks",
+	"type": "silverstripe-module",
+	"description": "Blocks is a generic class which can be used to build small content blocks which can be associated globally or with a specific page.",
+	"homepage": "https://github.com/richardsjoqvist/silverstripe-blocks",
+	"keywords": ["silverstripe", "module", "blocks"],
+	"authors": [
+		{
+			"name": "Richard Sjöqvist",
+			"homepage": "https://github.com/richardsjoqvist"
+		}
+	],
+	"require": {
+		"php": ">=5.3.2",
+		"composer/installers": "*",
+		"silverstripe/framework": "3.0.*"
+	}
+}
