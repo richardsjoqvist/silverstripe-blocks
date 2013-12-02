@@ -75,7 +75,7 @@ class FeedBlock extends Block
 		if(class_exists('OptionalTreeDropdownField')) {
 			// https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield
 			$treeField = new OptionalTreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
-			$treeField->setEmptyString('(Choose)');
+			$treeField->setEmptyString('No page');
 		}
 		else {
 			$treeField = new TreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
@@ -253,7 +253,7 @@ class FeedBlock extends Block
 	/**
 	 * Refresh feed
 	 */
-	function refresh() {
+	public function refresh() {
 		if($xml = $this->loadXml(true)) {
 			return get_class($xml) === 'SimpleXMLElement';
 		}

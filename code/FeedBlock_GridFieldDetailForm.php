@@ -4,11 +4,23 @@
  *
  * Extends {@link GridFieldDetailForm} to provide a refresh action for FeedBlock
  */
-class FeedBlock_GridFieldDetailForm extends GridFieldDetailForm {
+class FeedBlock_GridFieldDetailForm extends GridFieldDetailForm
+{
 }
 
-class FeedBlock_GridFieldDetailForm_ItemRequest extends GridFieldDetailForm_ItemRequest {
-	
+class FeedBlock_GridFieldDetailForm_ItemRequest extends GridFieldDetailForm_ItemRequest
+{
+
+	public static $allowed_actions = array(
+		'refresh'
+	);
+
+	/**
+	 * Refresh RSS Feed through AJAX-call
+	 *
+	 * @param $request
+	 * @return string (int)
+	 */
 	public function refresh($request) {
 		if (empty($this->record)) {
 			return '0';

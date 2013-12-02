@@ -4,7 +4,7 @@ Blocks is a generic class which can be used to build small content blocks which 
 
 ## Requirements
 
-* SilverStripe 3.0
+* SilverStripe 3.1
 
 ## Installation
 

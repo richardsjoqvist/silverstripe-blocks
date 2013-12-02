@@ -4,7 +4,8 @@
  *
  * Extends {@link GridFieldEditButton} to provide a refresh-link for rss feeds presented in a {@link GridField}
  */
-class FeedBlock_GridFieldRefreshButton extends GridFieldEditButton {
+class FeedBlock_GridFieldRefreshButton extends GridFieldEditButton
+{
 	
 	/**
 	 *

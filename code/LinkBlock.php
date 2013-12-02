@@ -42,7 +42,7 @@ class LinkBlock extends Block
 		if(class_exists('OptionalTreeDropdownField')) {
 			// https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield
 			$treeField = new OptionalTreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
-			$treeField->setEmptyString('(Choose)');
+			$treeField->setEmptyString('No Page');
 		}
 		else {
 			$treeField = new TreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
