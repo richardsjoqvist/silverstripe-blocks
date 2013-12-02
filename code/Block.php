@@ -11,7 +11,7 @@ class Block extends DataObject {
 	 *
 	 * @var array
 	 */
-	static $db = array(
+	private static $db = array(
 		'Title'				=> 'Text',
 		'LeadIn'			=> 'HTMLText',
 		'Content'			=> 'HTMLText',
@@ -26,7 +26,7 @@ class Block extends DataObject {
 	 *
 	 * @var array
 	 */
-	static $has_one = array(
+	private static $has_one = array(
 		'Page'				=> 'Page',
 		'Image'				=> 'Image',
 		'LinkInternal'		=> 'SiteTree',
@@ -38,7 +38,7 @@ class Block extends DataObject {
 	 *
 	 * @var array
 	 */
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		'Thumbnail'			=> 'Image',
 		'Title'				=> 'Title',
 		'LeadInText'		=> 'Lead in',
@@ -56,7 +56,7 @@ class Block extends DataObject {
 	 *
 	 * @var string
 	 */
-	static $default_sort = "Block.SortOrder ASC";
+	private static $default_sort = "Block.SortOrder ASC";
 
 	/**
 	 * Constructor

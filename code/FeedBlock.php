@@ -33,7 +33,7 @@ class FeedBlock extends Block
 	 *
 	 * @var array
 	 */
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		'Thumbnail'		=> 'Image',
 		'Title'			=> 'Title',
 		'FeedURL'		=> 'URL',

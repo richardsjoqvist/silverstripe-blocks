@@ -28,7 +28,7 @@ class ContactBlock extends Block
 	 *
 	 * @var array
 	 */
-	public static $summary_fields = array(
+	private static $summary_fields = array(
 		'Thumbnail'		=> 'Image',
 		'Title'			=> 'Name',
 		'Email'			=> 'Email',
