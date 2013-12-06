@@ -8,19 +8,19 @@ class ContactBlock extends Block
 {
 	
 	/**
-	 * Data fields
+	 * Fields
 	 *
 	 * @var array
 	 */
-	protected $_datafields = array(
-		'Role'			=> 'TextField',
-		'Email'			=> 'EmailField',
-		'Phone'			=> 'TextField',
-		'Mobile'		=> 'TextField',
-		'Street'		=> 'TextField',
-		'Zip'			=> 'TextField',
-		'City'			=> 'TextField',
-		'Box'			=> 'TextField',
+	private static $db = array(
+		'Role'			=> 'Text',
+		'Email'			=> 'Text',
+		'Phone'			=> 'Text',
+		'Mobile'		=> 'Text',
+		'Street'		=> 'Text',
+		'Zip'			=> 'Text',
+		'City'			=> 'Text',
+		'Box'			=> 'Text',
 	);
 
 	/**
@@ -44,18 +44,20 @@ class ContactBlock extends Block
 	 */
 	function getCMSFields() {
 		$fields = new FieldList();
-		
-		$fields->push(new TextField('Title', $this->getDataFieldLabel(__CLASS__, 'Name')));
-		foreach($this->_datafields as $fieldname => $fieldclass) {
-			$fields->push(new $fieldclass($fieldname, $this->getDataFieldLabel($this->ClassName, $fieldname)));
-		}
+
+		$fields->push(new TextField('Role', _t('ContactBlock.ROLE','Role')));
+		$fields->push(new EmailField('Email', _t('ContactBlock.EMAIL','Email')));
+		$fields->push(new TextField('Phone', _t('ContactBlock.PHONE','Phone')));
+		$fields->push(new TextField('Mobile', _t('ContactBlock.MOBILE','Mobile')));
+		$fields->push(new TextField('Street', _t('ContactBlock.STREET','Street')));
+		$fields->push(new TextField('Zip', _t('ContactBlock.ZIP','Zip')));
+		$fields->push(new TextField('City', _t('ContactBlock.CITY','City')));
+		$fields->push(new TextField('Box', _t('ContactBlock.BOX','Box')));
 
 		$imageField = new UploadField('Image', _t('Block.IMAGE','Image'));
 		$imageField->getValidator()->setAllowedExtensions(array('jpg', 'gif', 'png'));
 		$fields->push($imageField);
 
-		//$fields->push(new NumericField('SortOrder', 'Sort Order'));
-		
 		return $fields;
 	}
 	
@@ -75,21 +77,13 @@ class ContactBlock extends Block
 	 */
 	function Address() {
 		$city = array();
-		if(!empty($this->Zip)) {
-			$city[] = $this->Zip;
-		}
-		if(!empty($this->City)) {
-			$city[] = $this->City;
-		}
+		if($this->Zip) $city[] = $this->Zip;
+		if($this->City) $city[] = $this->City;
 		$address = array();
-		if(!empty($this->Street)) {
-			$address[] = $this->Street;
-		}
+		if($this->Street) $address[] = $this->Street;
 		$address[] = join(' ',$city);
-		if(!empty($this->Box)) {
-			$address[] = $this->Box;
-		}
-		return join(", ", $address);
+		if($this->Box) $address[] = $this->Box;
+		return join(', ', $address);
 	}
 	
 }

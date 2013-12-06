@@ -8,24 +8,17 @@ class FeedBlock extends Block
 {
 
 	/**
-	 * Path to cache folder
-	 *
-	 * @var string
-	 */
-	protected $cachePath = '';
-
-	/**
-	 * Datafields
+	 * Fields
 	 *
 	 * @var array
 	 */
-	protected $_datafields = array(
-		'FeedURL'			=> 'TextField',
-		'Results'			=> 'NumericField',
-		'SummaryMaxLength'	=> 'NumericField',
-		'CacheTime'			=> 'NumericField',
-		'Striptags'			=> 'CheckboxField',
-		'Modifier'			=> 'DropdownField',
+	private static $db = array(
+		'FeedURL'			=> 'Text',
+		'Results'			=> 'Int',
+		'SummaryMaxLength'	=> 'Int',
+		'CacheTime'			=> 'Int',
+		'Striptags'			=> 'Int',
+		'Modifier'			=> 'Text',
 	);
 
 	/**
@@ -54,26 +47,26 @@ class FeedBlock extends Block
 		$imageField->getValidator()->setAllowedExtensions(array('jpg', 'gif', 'png'));
 		$fields->push($imageField);
 
-		foreach($this->_datafields as $fieldname => $fieldclass) {
-			if($fieldname != 'Modifier') { // Add field by hand later
-				$fields->push(new $fieldclass($fieldname, Block::getDataFieldLabel(__CLASS__, $fieldname)));
-			}
-		}
+		$fields->push(new TextField('FeedURL', _t('FeedBlock.FEEDURL','FeedURL')));
+		$fields->push(new NumericField('Results', _t('FeedBlock.RESULTS','Results')));
+		$fields->push(new NumericField('SummaryMaxLength', _t('FeedBlock.SUMMARYMAXLENGTH','SummaryMaxLength')));
+		$fields->push(new NumericField('CacheTime', _t('FeedBlock.CACHETIME','CacheTime')));
+		$fields->push(new CheckboxField('Striptags', _t('FeedBlock.STRIPTAGS','Striptags')));
+
 		// Add modifier field (select function to run feed item through before displaying it)
-		if(isset($this->modifier_functions)){
-			$choises = array(
-				''	=> 'None'
-			);
-			foreach($this->modifier_functions as $f) {
-				$choises[$f] = $f;
+		if($this->modifier_functions) {
+			if(isset($this->modifier_functions)){
+				$options = array('' => 'None');
+				foreach($this->modifier_functions as $f) {
+					$options[$f] = $f;
+				}
+				$fields->push(new DropdownField('Modifier', _t('FeedBlock.MODIFIER','Feed item filter'), $options));
 			}
-			$fields->push(new DropdownField('Modifier', _t('FeedBlock.MODIFIER','Feed item filter'), $choises));
 		}
-		
+
 		$fields->push(new TextField('LinkExternal', _t('FeedBlock.LINKEXTERNAL','External link URL')));
 
 		if(class_exists('OptionalTreeDropdownField')) {
-			// https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield
 			$treeField = new OptionalTreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
 			$treeField->setEmptyString('No page');
 		}
@@ -82,8 +75,6 @@ class FeedBlock extends Block
 		}
 		$fields->push($treeField);
 
-		//$fields->push(new NumericField('SortOrder', _t('Block.SORTORDER')));
-		
 		return $fields;
 	}
 
@@ -121,23 +112,14 @@ class FeedBlock extends Block
 	 * @return ArrayList or boolean false
 	 */
 	function Items($refresh=false) {
-		if(!$this->FeedURL) {
-			return false;
-		}
-
-		if(!$xml = $this->loadXml()) {
-			return false;
-		}
+		if(!$this->FeedURL) return false;
+		if(!$xml = $this->loadXml()) return false;
 
 		$result = new ArrayList;
 		$counter = (int) $this->Results;
-		if(!$counter) {
-			// Return all posts
-			$counter = -1;
-		}
+		if(!$counter) $counter = -1; // Return all posts
 
-		foreach($xml->channel->item as $item)
-		{
+		foreach($xml->channel->item as $item) {
 			// Date
 			$date = new SS_Datetime('Date');
 			$date->setValue((string) $item->pubDate);
@@ -165,9 +147,7 @@ class FeedBlock extends Block
 			$summary = array_shift($summary);
 			// Truncate summary if necessary
 			$maxLength = (int) $this->SummaryMaxLength;
-			if($maxLength && strlen($summary) > $maxLength) {
-				$summary = substr($summary, 0, $maxLength) . '...';
-			}
+			if($maxLength && strlen($summary) > $maxLength) $summary = substr($summary, 0, $maxLength) . '...';
 			// Add to result list
 			$result->push(new ArrayData(array(
 				'Title'			=> $title,
@@ -218,9 +198,7 @@ class FeedBlock extends Block
 	 * @return bool|SimpleXMLElement
 	 */
 	private function loadXml($refresh=false) {
-		if(empty($this->FeedURL)) {
-			return false;
-		}
+		if(!$this->FeedURL) return false;
 		$cacheKey = md5($this->FeedURL);
 		// Get the Zend Cache to load/store cache into
 		$cache = SS_Cache::factory('FeedBlock_xml_', 'Output', array(
@@ -254,9 +232,7 @@ class FeedBlock extends Block
 	 * Refresh feed
 	 */
 	public function refresh() {
-		if($xml = $this->loadXml(true)) {
-			return get_class($xml) === 'SimpleXMLElement';
-		}
+		if($xml = $this->loadXml(true)) return get_class($xml) === 'SimpleXMLElement';
 		return false;
 	}
 

@@ -8,13 +8,13 @@ class LinkBlock extends Block
 {
 	
 	/**
-	 * Datafields
+	 * Fields
 	 *
 	 * @var array
 	 */
-	protected $_datafields = array(
-		'CssClasses'	=> 'TextField',
-		'Attributes'	=> 'TextareaField',
+	private static $db = array(
+		'CssClasses'	=> 'Text',
+		'Attributes'	=> 'Text',
 	);
 
 	/**
@@ -40,7 +40,6 @@ class LinkBlock extends Block
 		$fields->push(new TextField('LinkExternal', _t('Block.LINKEXTERNAL','External link URL')));
 
 		if(class_exists('OptionalTreeDropdownField')) {
-			// https://github.com/richardsjoqvist/silverstripe-optionaltreedropdownfield
 			$treeField = new OptionalTreeDropdownField('LinkInternalID', _t('Block.LINKINTERNAL','Internal link'), 'SiteTree');
 			$treeField->setEmptyString('No Page');
 		}
@@ -49,16 +48,13 @@ class LinkBlock extends Block
 		}
 		$fields->push($treeField);
 
-		foreach($this->_datafields as $fieldname => $fieldclass) {
-			$fields->push(new $fieldclass($fieldname, Block::getDataFieldLabel(__CLASS__, $fieldname)));
-		}
+		$fields->push(new TextField('CssClasses', _t('Block.CSSCLASSES','Css Classes')));
+		$fields->push(new TextareaField('Attributes', _t('Block.ATTRIBUTES','Attributes')));
 
 		$imageField = new UploadField('Image', _t('Block.IMAGE','Image'));
 		$imageField->getValidator()->setAllowedExtensions(array('jpg', 'gif', 'png'));
 		$fields->push($imageField);
 
-		//$fields->push(new NumericField('SortOrder', _t('Block.SORTORDER')));
-		
 		return $fields;
 	}
 
