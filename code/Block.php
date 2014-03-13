@@ -193,7 +193,7 @@ class Block extends DataObject {
 		$url = trim($this->LinkExternal);
 		if($this->HasLink() && empty($url)) {
 			// Internal link
-			if($object = DataObject::get_by_id('SiteTree', $this->LinkInternalID)) return $object->RelativeLink();
+			if($object = DataObject::get_by_id('SiteTree', $this->LinkInternalID)) return '/'.$object->RelativeLink();
 		}
 		return $url;
 	}
