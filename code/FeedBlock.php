@@ -15,7 +15,7 @@ class FeedBlock extends Block
 	private static $db = array(
 		'FeedURL'			=> 'Text',
 		'Results'			=> 'Int',
-		'SummaryMaxLength'	=> 'Int',
+		'SummaryMaxLength'		=> 'Int',
 		'CacheTime'			=> 'Int',
 		'Striptags'			=> 'Int',
 		'Modifier'			=> 'Text',
@@ -30,7 +30,7 @@ class FeedBlock extends Block
 		'Thumbnail'		=> 'Image',
 		'Title'			=> 'Title',
 		'FeedURL'		=> 'URL',
-		'ItemsInFeed'	=> 'Items in feed',
+		'ItemsInFeed'		=> 'Items in feed',
 	);
 
 	/**
@@ -153,7 +153,7 @@ class FeedBlock extends Block
 				'Title'			=> $title,
 				'Date'			=> $date,
 				'Link'			=> $link,
-				'Description'	=> $description,
+				'Description'		=> $description,
 				'Summary'		=> $summary,
 			)));
 			if($counter) {
@@ -203,7 +203,7 @@ class FeedBlock extends Block
 		// Get the Zend Cache to load/store cache into
 		$cache = SS_Cache::factory('FeedBlock_xml_', 'Output', array(
 			'automatic_serialization' => false,
-			'lifetime' => null
+			'lifetime' => $this->CacheTime
 		));
 		// Unless force refreshing, try loading from cache
 		if (!$refresh) {
