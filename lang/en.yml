@@ -25,7 +25,7 @@ en:
   FeedBlock:
     FEEDURL: 'RSS Feed URL'
     RESULTS: 'Number of results to display'
-    CACHETIME: 'Time (in minutes) to cache results (zero to disable)'
+    CACHETIME: 'Time (in seconds) to cache results (zero to disable)'
     STRIPTAGS: 'Remove HTML tags from results'
     SUMMARYMAXLENGTH: 'Max number of characters in summary'
     MODIFIER: 'Function for modifying entries before displaying'

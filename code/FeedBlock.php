@@ -205,10 +205,12 @@ class FeedBlock extends Block
 			'automatic_serialization' => false,
 			'lifetime' => $this->CacheTime
 		));
-		// Unless force refreshing, try loading from cache
-		if (!$refresh) {
-			if($xml = $cache->load($cacheKey)) {
-				return simplexml_load_string($xml);
+		if((int)$this->CacheTime) {
+			// Unless force refreshing, try loading from cache
+			if (!$refresh) {
+				if($xml = $cache->load($cacheKey)) {
+					return simplexml_load_string($xml);
+				}
 			}
 		}
 		// Load feed and cache it
@@ -221,7 +223,7 @@ class FeedBlock extends Block
 				return false;
 			}
 			if(isset($xmlObj->channel)) {
-				$cache->save($xml, $cacheKey);
+				$cache->save($xml, $cacheKey, array('FeedBlock'), $this->CacheTime);
 				return $xmlObj;
 			}
 		}
