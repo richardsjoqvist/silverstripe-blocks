@@ -391,3 +391,9 @@ The extra fields that can be printed separately are:
 * CssClasses: Classnames to add to &lt;a&gt;-tag
 * Image: Image
 
+
+## Screenshots
+
+![Overview](docs/images/overview.png)
+
+![Detail](docs/images/detail.png)
