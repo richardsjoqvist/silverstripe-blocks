@@ -45,6 +45,7 @@ class ContactBlock extends Block
 	function getCMSFields() {
 		$fields = new FieldList();
 
+		$fields->push(new TextField('Title', _t('ContactBlock.NAME','Name')));
 		$fields->push(new TextField('Role', _t('ContactBlock.ROLE','Role')));
 		$fields->push(new EmailField('Email', _t('ContactBlock.EMAIL','Email')));
 		$fields->push(new TextField('Phone', _t('ContactBlock.PHONE','Phone')));
